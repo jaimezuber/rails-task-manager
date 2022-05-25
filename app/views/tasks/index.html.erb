@@ -3,7 +3,8 @@
   <% @tasks.each do |task| %>
     <input type="checkbox">
     <%= link_to task_path(task) do %>
-      <label for="checkbox"><%= task.title %></label><br>
+      <label for="checkbox"><%= task.title %></label>
+      <%= link_to "Destroy", task_path(task), method: :delete, data: { confirm: "Are you sure?" }%><br>
     <% end %>
   <% end %>
 </form>
